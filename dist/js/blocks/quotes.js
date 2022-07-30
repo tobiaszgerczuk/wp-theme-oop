@@ -1,0 +1,2 @@
+new Swiper(".mySwiper",{spaceBetween:0,loop:!0,speed:20,autoplay:{enabled:!0,delay:8e3},pagination:{el:".swiper-pagination",dynamicBullets:!1,clickable:!0},slidesPerView:1,slidesPerGroup:1});
+//# sourceMappingURL=quotes.js.map

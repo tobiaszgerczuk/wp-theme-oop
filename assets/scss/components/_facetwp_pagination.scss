@@ -1,0 +1,36 @@
+.facetwp-facet-pagination {
+  display: flex;
+  flex-flow: row nowrap;
+  .facetwp-page {
+    display: inline-flex;
+    background: none;
+    padding: 0;
+    color: var(--wp--preset--color--text-gray);
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &.active{
+      color: var(--wp--preset--color--text);
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+    }
+    &.next,
+    &.prev {
+      width: 20px;
+      padding-left: 20px;
+      overflow: hidden;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.next {
+      background-image: url("../svg/next.svg");
+    }
+    &.prev {
+      background-image: url("../svg/prev.svg");
+    }
+  }
+}

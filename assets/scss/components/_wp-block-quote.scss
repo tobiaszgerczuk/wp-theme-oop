@@ -1,0 +1,41 @@
+.wp-block-quote {
+  border: none;
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  @include media-breakpoint-up(md) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  p {
+    font-weight: 500;
+    color: var(--wp--preset--color--text);
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    margin-top: 0;
+    @include media-breakpoint-up(md) {
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
+  cite {
+    color: (--wp--preset--color--text-gray);
+    font-size: 16px;
+    line-height: 22px;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 30px;
+    background-image: url("../svg/quote.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 16px;
+  }
+}

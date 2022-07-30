@@ -1,0 +1,87 @@
+.course-item {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    padding: 0 12px 14px 12px;
+    text-decoration: none;
+    @include media-breakpoint-up(lg) {
+        padding: 0 38px 32px;
+    }
+    &__thumbnail {
+        padding: 0;
+        margin: 0 -12px;
+        width: calc(100% + (2 * 12px));
+        overflow: hidden;
+        @include media-breakpoint-up(lg) {
+            margin: 0 -38px;
+            width: calc(100% + (2 * 38px));
+        }
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1.875;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            transition: all .3s ease-in-out;
+        }
+    }
+    &__title {
+        margin-top: 12px;
+        margin-bottom: 9px;
+        font-size: 16px;
+        line-height: 18px;
+        @include media-breakpoint-up(md) {
+            font-size: 28px;
+            line-height: 30px;
+            margin-top: 32px;
+            margin-bottom: 20px;
+        }
+    }
+    >span {
+        color: var( --wp--preset--color--text-gray);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        padding-left: 20px;
+        position: relative;
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+            line-height: 26px;
+            padding-left: 28px;
+        }
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include media-breakpoint-up(md) {
+                width: 17px;
+                height: 17px;
+                top: 4px;
+            }
+        }
+        &.course-item__education:before {
+            background-image: url("../svg/education.svg");
+        }
+        &.course-item__duration:before {
+            background-image: url("../svg/duration.svg");
+        }
+        &.course-item__additional:before {
+            background-image: url("../svg/additional.svg");
+        }
+    }
+    &:hover {
+        .course-item__thumbnail {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

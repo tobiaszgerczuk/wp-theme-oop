@@ -1,0 +1,145 @@
+@import "../variables";
+@import "../mixins";
+
+.submenu {
+  padding: 0;
+  position: sticky;
+  top: 0;
+  height: 72px;
+  z-index: 2;
+
+  @include media-breakpoint-up(lg) {
+    padding: 12px 0 12px 0;
+    background: rgba( white, .9 );
+    height: unset;
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    @include media-breakpoint-down(lg) {
+      padding: 0!important;
+    }
+    @include media-breakpoint-up(lg) {
+      flex-flow: row nowrap;
+    }
+
+    .menu {
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: hidden;
+      max-height: 72px;
+      transition: max-height .3s ease-in-out;
+      position: absolute;
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        position: relative;
+        align-items: center;
+        flex-flow: row nowrap;
+        max-height: unset;
+        height: 58px;
+        background: transparent;
+        width: unset;
+      }
+      &__trigger {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24px;
+        cursor: pointer;
+        position: relative;
+        transition: all .3s ease-in-out;
+        padding: 24px var(--bs-gutter-x, 1rem);
+        background: rgba( white, .9 );
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+        &:hover {
+          color: var( --wp--preset--color--text );
+        }
+        &:after {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 8px;
+          position: absolute;
+          right: var(--bs-gutter-x, 1rem);
+          top: calc(50% - 5px);
+          background-image: url("../../svg/arrow_menu.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: all .3s ease-in-out;
+          @include media-breakpoint-up(lg) {
+            right: 0;
+          }
+        }
+      }
+      &__item {
+        text-decoration: none;
+        color: var( --wp--preset--color--text-gray );
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        background: rgba( white, .9 );
+        padding: 10px var(--bs-gutter-x, 1rem);
+        @include media-breakpoint-up(lg) {
+          font-size: 17px;
+          line-height: 24px;
+          background: unset;
+          padding: 7px 0;
+        }
+        &:not(:last-child) {
+          @include media-breakpoint-up(lg) {
+            margin-right: 30px;
+          }
+        }
+        &.is-active {
+          color: var( --wp--preset--color--text );
+        }
+      }
+
+      &.is-open {
+        max-height: 1000px;
+        .menu__trigger:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: rgba( white, .95 );
+      width: 100%;
+      padding: 24px;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+      @include media-breakpoint-up(lg) {
+        align-self: flex-end;
+        margin-left: auto;
+        position: relative;
+        width: unset;
+        padding: unset;
+        flex-flow: row nowrap;
+        align-items: unset;
+      }
+      .wp-block-button {
+        &__link {
+          width: 100%;
+          @include media-breakpoint-up(lg) {
+            width: unset;
+          }
+          &:not(:last-child) {
+            margin-bottom: 2px;
+            @include media-breakpoint-up(lg) {
+              margin-right: 2px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}

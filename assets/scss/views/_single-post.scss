@@ -1,0 +1,89 @@
+body.single-post {
+  background-color: #f1f2f3;
+
+  .post__details {
+    margin-top: 143px;
+    display: flex;
+    @include media-breakpoint-up(md) {
+      margin-top: 211px;
+    }
+    > *:not(:last-child) {
+      margin-right: 10px;
+      &:after {
+        content: '|';
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .post__title {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    word-wrap: break-word;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 46px;
+    }
+  }
+
+  .post__image {
+    margin-bottom: 40px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 64px;
+    }
+  }
+
+  .post__footer {
+    position: relative;
+    margin-top: 32px;
+    padding-bottom: 64px;
+    @include media-breakpoint-up(md) {
+      margin-top: 64px;
+      padding-bottom: 128px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      margin-bottom: 32px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 64px;
+      }
+    }
+    .share {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 27px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 40px;
+      }
+      &__title {
+        margin-right: 16px;
+      }
+      &__icon {
+        display: inline-flex;
+        width: 26px;
+        height: 26px;
+        &:not(:last-child) {
+          margin-right: 7px;
+        }
+        &.icon--facebook {
+          background-image: url("../svg/facebook.svg");
+        }
+        &.icon--linkedin {
+          background-image: url("../svg/linkedin.svg");
+        }
+        &.icon--whatsapp {
+          background-image: url("../svg/whatsapp.svg");
+        }
+        &.icon--twitter {
+          background-image: url("../svg/twitter.svg");
+        }
+        &.icon--mail {
+          background-image: url("../svg/mail.svg");
+        }
+      }
+    }
+  }
+}

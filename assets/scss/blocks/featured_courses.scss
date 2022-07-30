@@ -1,0 +1,90 @@
+@import "../variables";
+@import "../mixins";
+@import "../components/swiper";
+.featured-courses {
+    background-color: #F1F2F3;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include media-breakpoint-up(md) {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+    .content {
+        >* {
+            max-width: 770px;
+        }
+        &__heading {
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+        &__body {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        &.container-bottom {
+            margin-top: 32px;
+            @include media-breakpoint-up(md) {
+                margin-top: 40px;
+            }
+        }
+    }
+    &__carousel {
+        width: 100%;
+        overflow: hidden;
+        .course-item {
+            height: auto;
+            &__title {
+                font-size: 28px;
+                line-height: 30px;
+                letter-spacing: -0.4px;
+                @include media-breakpoint-down(md) {
+                    margin-top: 24px;
+                    margin-bottom: 16px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                }
+            }
+            &>span {
+                font-size: 18px;
+                line-height: 26px;
+                padding-left: 28px;
+                @include media-breakpoint-down(md) {
+                    margin-left: 12px;
+                    margin-right: 12px;
+                }
+                &:before {
+                    top: 4px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            &__additional {
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .swiper-pagination {
+            display: flex;
+            width: 100%;
+            margin-top: 16px;
+            justify-content: center;
+            @include media-breakpoint-up(md) {
+                margin-top: 24px;
+            }
+            &-bullet {
+                width: 8px;
+                height: 8px;
+                background: var( --wp--preset--color--one);
+                border-radius: 50%;
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-right: 6px;
+                }
+                &:not(.swiper-pagination-bullet-active) {
+                    opacity: .3;
+                }
+            }
+        }
+    }
+}

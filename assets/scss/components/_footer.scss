@@ -1,0 +1,242 @@
+@import "../variables";
+@import "../mixins";
+
+.footer {
+  padding-top: 80px;
+  padding-bottom: 28px;
+  background-color: var(--wp--preset--color--three);
+
+  &_subheading {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    @include media-breakpoint-down(md) {
+      position: relative;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    &:after {
+      content: "";
+      @include media-breakpoint-down(md) {
+        content: url(../../assets/svg/plus_foot.svg);
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 0;
+      }
+    }
+  }
+
+  .main_block_footer{
+      @include media-breakpoint-down(md) {
+        p{
+          margin-bottom: 46px;
+          margin-top:0;
+        }
+        h3{
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+  h3 {
+    color: #fff;
+    margin-top: 0px;
+  }
+
+  &_menu_footer {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0px;
+    }
+
+    li {
+      a {
+        color: var(--wp--preset--color--text-light-gray);
+        text-decoration: none;
+        font-weight: 400;
+        line-height: 1.111rem;
+        font-size: 16px;
+        transition: all 0.4s;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+      @include media-breakpoint-down(md) {
+        margin-bottom: 8px;
+      }
+      &:last-child{
+        margin-bottom: 16px;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      display: none;
+      margin-bottom: 8px;
+      ul li a {
+        margin-top: 8px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &_copyrights {
+    &__content {
+      display: flex;
+      border-top: 1px solid #90A0B5;
+      flex-direction: row;
+      color: var(--wp--preset--color--text-light-gray);
+      padding-top: 28px;
+      font-size: 13px;
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        border-top: 0px;
+        flex-direction: column;
+      }
+    }
+
+    &__text {
+      margin-right: 2.7rem;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 16px;
+        line-height: 14px;
+      }
+
+    }
+
+    &__design a {
+      color: var(--wp--preset--color--text-light-gray);
+      text-decoration: none;
+      font-weight: 400;
+      line-height: 14px;
+      font-size: 13px;
+      transition: all 0.4s;
+    }
+
+    &__design {
+      a:hover {
+        color: #fff;
+      }
+      @include media-breakpoint-down(md) {
+        line-height: 14px;
+      }
+    }
+  }
+
+  .justify_end {
+    justify-content: end;
+  }
+
+  &_link_footer {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .row {
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+  }
+
+  &_subheading {
+    @include media-breakpoint-down(md) {
+      border-top: 1px solid rgba(241, 242, 243, 0.16);
+    }
+  }
+
+  .active .footer_subheading:after {
+    @include media-breakpoint-down(md) {
+      content: url(../../assets/svg/minus_foot.svg);
+    }
+  }
+
+  .active {
+    .footer_menu_footer {
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+  }
+
+  .bottom_footer {
+    margin-top: 1.5rem;
+  }
+}
+
+.menu1_footer {
+  padding-left: 0.5rem;
+}
+
+
+.footer_copyrights__links{
+  margin-right: 2.7rem;
+
+  ul {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    @include media-breakpoint-down(md) {
+      padding-left: 0px;
+    }
+  li{
+    @include media-breakpoint-down(md) {
+      line-height: 14px;
+    }
+  }
+  }
+
+  li:after {
+    content: "|";
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  li:last-child:after {
+    content: "";
+    display: none;
+  }
+
+  a {
+    color: var(--wp--preset--color--text-light-gray);
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 14px;
+    font-size: 13px;
+    transition: all 0.4s;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 16px;
+  }
+}
+.hr_footer{
+  display: none;
+  @include media-breakpoint-down(md) {
+    display: block;
+    border-bottom: 1px solid rgba(241, 242, 243, 0.16);
+    width:100%;
+    height:auto;
+  }
+}

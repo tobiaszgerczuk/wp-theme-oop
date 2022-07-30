@@ -1,0 +1,137 @@
+body.blog {
+    background-color: #f1f2f3;
+    .site-main {
+        >* {
+            max-width: 1230px !important;
+        }
+        .site-title {
+            margin-top: 142px;
+            margin-bottom: 20px;
+            @include media-breakpoint-up(md) {
+                margin-top: 204px;
+                margin-bottom: 128px;
+            }
+            @include media-breakpoint-down(md) {
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+        }
+        .site-filters {
+            display: flex;
+            flex-flow: row nowrap;
+            position: relative;
+            @include media-breakpoint-down(md) {
+                padding-right: 0;
+                padding-left: 0;
+            }
+            .facetwp-facet-categories {
+                @include media-breakpoint-down(md) {
+                    div:first-child {
+                        padding-left: var(--bs-gutter-x, 1rem);
+                    }
+                }   
+                display: flex;
+                flex-flow: row nowrap;
+                overflow-x: auto;
+                margin: 0;
+                >* {
+                    background: none;
+                    padding: 0;
+                    color: var(--wp--preset--color--text-gray);
+                    font-size: 17px;
+                    line-height: 24px;
+                    font-weight: 600;
+                    &.checked {
+                        color: var(--wp--preset--color--text);
+                        text-decoration: underline;
+                        text-decoration-thickness: 1.5px;
+                    }
+                    &:not(:last-child) {
+                        margin-right: 32px;
+                    }
+                    .facetwp-counter {
+                        display: none;
+                    }
+                }
+            }
+            .facetwp-facet-pagination {
+                display: none;
+                margin: 0;
+                @include media-breakpoint-up(md) {
+                    display: flex;
+                    align-self: flex-end;
+                    margin-left: auto;
+                }
+            }
+        }
+        .posts-grid {
+            display: grid;
+            grid-column-gap: 32px;
+            grid-row-gap: 32px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            margin-top: 32px;
+            margin-bottom: 32px;
+            @include media-breakpoint-up(md) {
+                grid-column-gap: 64px;
+                grid-row-gap: 64px;
+                margin-top: 40px;
+                margin-bottom: 64px;
+            }
+            .post-item {
+                text-decoration: none;
+                &__thumbnail {
+                    overflow: hidden;
+                    margin: 0 0 16px;
+                    @include media-breakpoint-up(md) {
+                        margin: 0 0 24px;
+                    }
+                    >img {
+                        aspect-ratio: 1.497;
+                        object-fit: cover;
+                        object-position: center;
+                        transition: all .3s ease-in-out;
+                    }
+                }
+                &__categories {
+                    margin-bottom: 8px;
+                    @include media-breakpoint-up(md) {
+                        margin-bottom: 12px;
+                    }
+                }
+                &__title {
+                    margin: 0;
+                }
+                &:hover {
+                    .post-item__thumbnail>img {
+                        transform: scale(1.1);
+                    }
+                    .post-item__title {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .site-pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 64px;
+            @include media-breakpoint-up(md) {
+                justify-content: flex-end;
+                margin-bottom: 128px;
+            }
+            .facetwp-facet {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.facetwp-facet.facetwp-facet-categories {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -1,0 +1,17 @@
+.wp-block-buttons {
+  > * {
+    width: 100%;
+    margin-bottom: 8px;
+    @include media-breakpoint-up(sm) {
+      width: auto;
+    }
+    a {
+      width: 100%;
+    }
+    &:not(:last-child) {
+      @include media-breakpoint-up(sm) {
+        margin-right: 3px;
+      }
+    }
+  }
+}

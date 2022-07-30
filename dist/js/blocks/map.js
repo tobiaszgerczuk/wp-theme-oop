@@ -1,0 +1,2 @@
+google.maps.event.addDomListener(window,"load",(function(){var e=document.getElementById("map"),a={zoom:Number(e.dataset.zoom),center:{lat:Number(e.dataset.latidude),lng:Number(e.dataset.longtude)}},t=new google.maps.Map(e,a);new google.maps.Marker({position:{lat:Number(e.dataset.latidude),lng:Number(e.dataset.longtude)},map:t,icon:WLC.icon,draggarble:!0})}));
+//# sourceMappingURL=map.js.map

@@ -1,0 +1,25 @@
+:root {
+  --bs-gutter-x: 24px;
+}
+
+.block.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+@media (min-width: 1024px) {
+  .block.section {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
+}
+.block.section .container {
+  min-height: 30px;
+}
+.block.section .container > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.block.section .container > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

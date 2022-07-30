@@ -1,0 +1,2 @@
+!function(){var e=document.getElementById("jobs-filter-trigger");e&&(e.onclick=function(e){e.currentTarget.classList.toggle("is-open");var t=document.querySelector(".jobs__filters");t&&t.classList.toggle("is-open")})}();
+//# sourceMappingURL=jobs.js.map

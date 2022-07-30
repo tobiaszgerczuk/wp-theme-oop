@@ -1,0 +1,126 @@
+:root {
+  --bs-gutter-x: 24px;
+}
+
+.acf-block-preview * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.block.card-grid {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+@media (min-width: 1024px) {
+  .block.card-grid {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
+}
+
+.block.card-grid .row {
+  --bs-gutter-y: 12px;
+}
+@media (min-width: 1024px) {
+  .block.card-grid .row {
+    --bs-gutter-y: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .block.card-grid .row > * {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .block.card-grid .row > .col-md-6:first-child {
+    padding-left: 16px;
+  }
+  .block.card-grid .row > .col-md-6:last-child {
+    padding-right: 16px;
+  }
+}
+
+.editor-styles-wrapper .single-card h3 {
+  color: #fff;
+  margin: 0 0 27px;
+}
+
+.single-card {
+  aspect-ratio: 1/1;
+  background-size: cover;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .single-card {
+    aspect-ratio: 28/19;
+  }
+}
+.single-card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 32px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+@media (min-width: 1024px) {
+  .single-card__content {
+    padding: 50px;
+  }
+}
+.single-card__content--subheading {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 0 0 2px 0;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .single-card__content--subheading {
+    margin: 0 0 7px 0;
+  }
+}
+.single-card__content h3 {
+  color: #fff;
+  margin: 0 0 23px;
+}
+@media (max-width: 1023px) {
+  .single-card__content h3 {
+    line-height: 30px;
+    margin: 0 0 9px;
+  }
+}
+.single-card__content--button {
+  color: var(--wp--preset--color--one);
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(0, 114, 255, 0.4);
+  padding: 0 0 2px 0;
+  font-size: 17px;
+}
+.single-card__content--button-white {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 0 0 2px 0;
+  font-size: 17px;
+}
+.single-card__content--button-white:hover {
+  border-bottom: 1.5px solid rgb(255, 255, 255);
+}
+.single-card__content--button:hover {
+  border-bottom: 1.5px solid rgb(0, 114, 255);
+}
+
+@media (max-width: 1023px) {
+  .card-grid .col-md-6:last-child {
+    margin-top: 24px;
+  }
+}

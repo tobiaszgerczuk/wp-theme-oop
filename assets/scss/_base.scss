@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  // If have use responsive font use this and check variables settings in _variables.scss
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+body {
+  @include media-breakpoint-down(md) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.container {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: var( --bs-gutter-x );
+  padding-left: var( --bs-gutter-x );
+  width: 100%;
+
+  @each $container-size-name, $container-max in $container-max-widths {
+    @include media-breakpoint-up($container-size-name) {
+      max-width: $container-max;
+    }
+  }
+}
+
+.site-main {
+  > *:not(.alignfull):not(.alignwide) {
+    @extend .container;
+  }
+  > ul:not([class]),
+  > ol:not([class]),
+  ul.has-text-color,
+  ol.has-text-color {
+    padding-left: calc( var(--bs-gutter-x, 1rem) * 2 )!important;
+  }
+  > *.has-one-background-color {
+    + .has-one-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-one-hovered-background-color {
+    + .has-one-hovered-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-two-background-color {
+    + .has-two-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-three-background-color {
+    + .has-three-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-four-background-color {
+    + .has-four-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-five-background-color {
+    + .has-five-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-text-background-color {
+    + .has-text-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-text-light-gray-background-color {
+    + .has-text-light-gray-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-white-background-color {
+    + .has-white-background-color {
+      padding-top: 0 !important;
+    }
+  }
+
+  > *.has-light-gray-background-color {
+    + .has-light-gray-background-color {
+      padding-top: 0 !important;
+    }
+  }
+  > *.page-header{
+    + .block:not(.submenu){
+      padding-top: 128px !important;
+      @include media-breakpoint-down(md) {
+        padding-top: 64px !important;
+      }
+    }
+  }
+
+  > *.block:not(.has-one-background-color):not(.has-one-hovered-background-color):not(.has-two-background-color):not(.has-four-background-color):not(.has-three-background-color):not(.has-five-background-color):not(.has-text-background-color):not(.has-text-gray-background-color):not(.has-text-light-gray-background-color):not(.has-white-background-color):not(.has-light-gray-background-color):not(.submenu):not(.popup)  {
+  +.block:not(.has-one-background-color):not(.has-one-hovered-background-color):not(.has-two-background-color):not(.has-four-background-color):not(.has-three-background-color):not(.has-five-background-color):not(.has-text-background-color):not(.has-text-gray-background-color):not(.has-text-light-gray-background-color):not(.has-white-background-color):not(.has-light-gray-background-color):not(.submenu):not(.popup)  {
+  padding-top: 0;
+}
+}
+
+}
+
+.container-wide {
+  @extend .container;
+  max-width: 1230px!important;
+}

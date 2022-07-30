@@ -1,0 +1,110 @@
+@import "../variables";
+@import "../mixins";
+.acf-block-preview * {
+    box-sizing: border-box;
+}
+
+.block.card-grid {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include media-breakpoint-up(md) {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+}
+
+.block.card-grid .row {
+    --bs-gutter-y: 12px;
+    @include media-breakpoint-up(md) {
+        --bs-gutter-y: 24px;
+    }
+    &>* {
+        @include media-breakpoint-up(md) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        &>.col-md-6:first-child {
+            padding-left: 16px;
+        }
+        &>.col-md-6:last-child {
+            padding-right: 16px;
+        }
+    }
+}
+
+.editor-styles-wrapper .single-card h3 {
+    //TODO refactor with .single-card__content h3
+    color: #fff;
+    margin: 0 0 27px;
+}
+
+.single-card {
+    aspect-ratio: 1/1;
+    background-size: cover;
+    position: relative;
+    @include media-breakpoint-up(md) {
+        aspect-ratio: 28/19;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: 32px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        @include media-breakpoint-up(md) {
+            padding: 50px;
+        }
+        &--subheading {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 2px;
+            color: #fff;
+            margin: 0 0 2px 0;
+            text-transform: uppercase;
+            @include media-breakpoint-up(md) {
+                margin: 0 0 7px 0;
+            }
+        }
+        h3 {
+            color: #fff;
+            margin: 0 0 23px;
+            @include media-breakpoint-down(md) {
+                line-height: 30px;
+                margin: 0 0 9px;
+            }
+        }
+        &--button {
+            color: var(--wp--preset--color--one);
+            text-decoration: none;
+            border-bottom: 1.5px solid rgba(0, 114, 255, .4);
+            padding: 0 0 2px 0;
+            font-size: 17px;
+            &-white {
+                color: #fff;
+                text-decoration: none;
+                border-bottom: 1.5px solid rgba(255, 255, 255, .4);
+                padding: 0 0 2px 0;
+                font-size: 17px;
+                &:hover {
+                    border-bottom: 1.5px solid rgba(255, 255, 255, 1);
+                }
+            }
+            &:hover {
+                border-bottom: 1.5px solid rgba(0, 114, 255, 1);
+            }
+        }
+    }
+}
+
+.card-grid {
+    .col-md-6:last-child {
+        @include media-breakpoint-down(md) {
+            margin-top: 24px;
+        }
+    }
+}

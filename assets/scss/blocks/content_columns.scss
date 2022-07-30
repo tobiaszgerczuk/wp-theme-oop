@@ -1,0 +1,214 @@
+@import "../variables";
+@import "../mixins";
+
+.content-columns {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  @include media-breakpoint-down(md) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  h3.subheading{
+    margin-top:0;
+  }
+  a {
+    margin-top: 24px;
+    display: block;
+    font-size: 17px;
+    line-height: 16px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 6px;
+    }
+  }
+
+  &_content_column {
+    img {
+      max-width: 34px;
+      margin-bottom: 24px;
+    }
+
+    &__columns_block {
+      padding-right: 32px;
+      padding-left: 32px;
+      @include media-breakpoint-down(md) {
+        display: flex;
+      }
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      @include media-breakpoint-down(md) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  h2 {
+    margin-bottom:0;
+    margin-top: 14px;
+
+    &.no_dot {
+      margin-top: 0px;
+      margin-bottom: 48px;
+
+
+      &::after {
+        content: '';
+      }
+    }
+
+  }
+
+  .with_dot {
+    h3 {
+      position: relative;
+      margin-top: 64px;
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+      }
+    }
+
+    h3:before {
+      content: "";
+      position: absolute;
+      width: 43px;
+      height: 43px;
+      border-radius: 100%;
+      top: -59px;
+      background-color: var(--wp--preset--color--one);
+      @include media-breakpoint-down(md) {
+        top: 0;
+        left: -60px;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-left: 60px;
+    }
+  }
+
+  .row .content-columns_content_column__columns_block {
+
+
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &_icon {
+    @include media-breakpoint-down(md) {
+      padding-right: 2rem;
+    }
+  }
+
+}
+
+.content-columns_content_column__columns_block.col-md-4 {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  &:first-child {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: 32px;
+    @include media-breakpoint-down(md) {
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+    }
+  }
+
+  &:nth-child(4n-1) {
+    padding-left: 32px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    @include media-breakpoint-down(md) {
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+  }
+
+  &:nth-child(5n-1) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+
+  }
+  @include media-breakpoint-down(md) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+.content-columns_content_column__columns_block.col-md-4.with_dot {
+  @include media-breakpoint-down(md) {
+    padding-left: 70px
+  }
+}
+
+.content-columns_content_column__columns_block.col-md-3 {
+  padding-left: 32px;
+  padding-right: 32px;
+  @include media-breakpoint-down(md) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  &:first-child {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: 32px;
+    @include media-breakpoint-down(md) {
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+    }
+  }
+
+  &:nth-child(5n-1) {
+    padding-left: 32px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    @include media-breakpoint-down(md) {
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+  }
+  &:nth-child(6n-1) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+
+  }
+
+
+  @include media-breakpoint-down(md) {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+.content-columns_content_column__columns_block.col-md-3.with_dot {
+  @include media-breakpoint-down(md) {
+    padding-left: 70px
+  }
+}
+
+.content-columns_content_column__columns_block.col-md-4 {
+  &:nth-child(n+4) {
+    margin-top: 48px;
+  }
+}
+
+.content-columns_content_column__columns_block.col-md-3 {
+  &:nth-child(n+5) {
+    margin-top: 48px;
+  }
+}
+
+.content-columns .row .content-columns_content_column__columns_block {
+  &:first-child {
+    margin-top: 0;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top:40px;
+  }
+}
+
+

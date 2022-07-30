@@ -1,0 +1,182 @@
+@import "../variables";
+@import "../mixins";
+.team {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include media-breakpoint-up(md) {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+}
+
+.team--container {
+    @include media-breakpoint-down(md) {
+        overflow-x: hidden;
+    }
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        max-width: 68%;
+        @include media-breakpoint-down(md) {
+            max-width: 100%;
+        }
+    }
+}
+
+.member {
+    &--container {
+        --bs-gutter-y: 32px;
+        @include media-breakpoint-up(md) {
+            --bs-gutter-y: 56px;
+        }
+        margin-top: var(--bs-gutter-y / 2);
+        margin-bottom: var(--bs-gutter-y / 2);
+
+    }
+    &--name {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    &--position {
+        margin-top: 3px;
+        margin-bottom: 16px;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 12px;
+        margin-top: 12px;
+        font-family: inherit;
+        letter-spacing: 2px;
+        color: var(--wp--preset--color--text-gray);
+        text-transform: uppercase;
+        @include media-breakpoint-down(md) {
+            font-size: 10px;
+        }
+    }
+    &--linkedin {
+        margin-top: 1px;
+        &__link {
+            display: flex;
+            align-items: center;
+            height: auto;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+            &-txt {
+                color: var(--wp--preset--color--one);
+                text-decoration: none;
+                font-family: "Helvetica", sans-serif;
+                font-size: 16px;
+                margin-left: 8px;
+                margin-bottom: 0;
+                margin-top: 0;
+                font-weight: 700;
+                line-height: 24px;
+            }
+        }
+    }
+    &--linkedin img {
+        height: 24px;
+        width: auto;
+        @include media-breakpoint-down(md) {
+            height: 17px;
+        }
+    }
+    &--photo {
+        img{
+            object-fit: cover;
+        }
+    }
+}
+
+.member--container.col-md-4 {
+    padding-left: 16px;
+    padding-right: 16px;
+    &:first-child {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: 16px;
+        @include media-breakpoint-down(md) {
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+    &:nth-child(3n) {
+        padding-left: 16px;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        @include media-breakpoint-down(md) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+    &:nth-child(4n) {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: 16px;
+        @include media-breakpoint-down(md) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+    @include media-breakpoint-down(md) {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+    }
+}
+
+.member--container.col-md-3 {
+    padding-left: 16px;
+    padding-right: 16px;
+    &:first-child {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: 16px;
+        @include media-breakpoint-down(md) {
+            padding-left:calc(var(--bs-gutter-x) * 0.5);
+            padding-right: 8px;
+        }
+    }
+    &:nth-child(2n) {
+        @include media-breakpoint-down(md) {
+            padding-left: 8px;
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+    &:nth-child(3n) {
+        @include media-breakpoint-down(md) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            padding-right: 8px;
+        }
+    }
+
+    &:nth-child(4n) {
+        padding-left: 16px;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        @include media-breakpoint-down(md) {
+            padding-left: 8px;
+            padding-right:  calc(var(--bs-gutter-x) * 0.5);
+        }
+    }
+    &:nth-child(5n) {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: 16px;
+        @include media-breakpoint-down(md) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            padding-right: 8px;
+        }
+    }
+
+}
+
+.member--container.col-md-4 {
+    .member--name {
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+            line-height: 30px;
+        }
+    }
+}
+
+.over_link{
+    margin-top: 16px;
+    display: block;
+    @include media-breakpoint-down(md) {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,24 @@
+@import "../variables";
+@import "../mixins";
+
+.block.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  @include media-breakpoint-up(md) {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
+  .container {
+    min-height: 30px;
+    & > * {
+      &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
